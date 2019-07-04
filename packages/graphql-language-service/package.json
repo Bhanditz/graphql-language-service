@@ -26,7 +26,8 @@
     "build": "npm run build-js && npm run build-flow",
     "build-js": "babel-node ../../resources/buildJs.js",
     "build-flow": "babel-node ../../resources/buildFlow.js",
-    "prepublish": "node ../../resources/prepublish.js"
+    "prepublish": "npm run snyk-protect; node ../../resources/prepublish.js",
+    "snyk-protect": "snyk protect"
   },
   "peerDependencies": {
     "graphql": "^0.6.0 || ^0.7.0 || ^0.8.0-b || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0"
@@ -37,6 +38,8 @@
     "graphql-language-service-interface": "^2.0.0",
     "graphql-language-service-server": "^2.0.0",
     "graphql-language-service-utils": "^2.0.0",
-    "yargs": "^3.32.0 || ^7.0.0"
-  }
+    "yargs": "^3.32.0 || ^7.0.0",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
